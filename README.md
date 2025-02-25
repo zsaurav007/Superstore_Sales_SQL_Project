@@ -145,7 +145,7 @@ GROUP BY CUSTOMER_SEGMENT;
 - There were **no invalid unit price**.
 - The **last order date was 2013-12-31**.
 - Customers are segmented into different categories like Loyal, Active, Churned, etc. to helps in targeted marketing strategies and better customer relationship management
-- The insight suggests that while loyal customers generate the highest revenue, there are significant numbers of churned customers and potential churners that may require retention strategies.
+- The insight suggests that while **loyal customers generate the highest revenue**, there are **significant numbers of churned customers and potential churners** that may require retention strategies.
 
 ![Customer Segments](customer_segments.PNG)
 
