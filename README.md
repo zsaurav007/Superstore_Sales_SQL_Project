@@ -3,6 +3,10 @@
 ## Project Overview
 This project involves creating a MySQL database, importing Superstore sales data, performing data cleaning, and conducting an exploratory data analysis (EDA). Additionally, it segments customers using RFM (Recency, Frequency, Monetary) analysis to categorize them based on purchasing behavior.
 
+## Files Used
+- **Superstore Sales Data.xlsx** - Raw sales data.
+- **superstore_sales.sql** - SQL script for database creation, data insertion and analysis.
+
 ## Database and Table Creation
 ### 1. Create Database
 ```sql
@@ -127,9 +131,14 @@ FROM RFM_ANALYSIS
 GROUP BY CUSTOMER_SEGMENT;
 ```
 
-## Results & Insights
+## Results & Findings
+- There were **9,426** rows in the dataset.
+- There were **no duplicate rows**.
+- The **last order date was 2013-12-31**.
 - Customers are segmented into different categories like Loyal, Active, Churned, etc.
 - This segmentation helps in targeted marketing strategies and better customer relationship management.
+
+![Customer Segments](customer_segments.png)
 
 ## Technologies Used
 - **Database**: MySQL
@@ -137,16 +146,9 @@ GROUP BY CUSTOMER_SEGMENT;
 
 ## How to Use
 1. Clone the repository.
-2. Import the SQL scripts into MySQL.
+2. Import the data and SQL scripts into MySQL.
 3. Run the queries sequentially to clean, analyze, and segment the data.
-
-## Future Improvements
-- Automate RFM analysis using Python and visualization tools.
-- Implement machine learning models for predictive analysis.
-- Create a dashboard for dynamic data visualization.
 
 ## Author
 Zulkarnain Saurav
-
-
 
