@@ -66,19 +66,11 @@ SELECT CUSTOMERID, COUNT(*) FROM SUPERSTORE_SALES GROUP BY CUSTOMERID ORDER BY 2
 ```
 ### 10. Checking for Invalid Order Quantity
 ```sql
-SELECT
-	ROWID, QUANTITYORDERED
-FROM SUPERSTORE_SALES
-ORDER BY QUANTITYORDERED
-LIMIT 10;
+SELECT ROWID, QUANTITYORDERED FROM SUPERSTORE_SALES ORDER BY QUANTITYORDERED LIMIT 10;
 ```
 ### 11. Checking for Invalid Unit Price
 ```sql
-SELECT
-	ROWID, UNITPRICE
-FROM SUPERSTORE_SALES
-ORDER BY UNITPRICE
-LIMIT 10;
+SELECT ROWID, UNITPRICE FROM SUPERSTORE_SALES ORDER BY UNITPRICE LIMIT 10;
 ```
 
 ## RFM Segmentation
@@ -148,8 +140,9 @@ GROUP BY CUSTOMER_SEGMENT;
 ```
 
 ## Results & Findings
-- There were **9,426** rows in the dataset.
 - There were **no duplicate rows**.
+- There were **no invalid order quantity**.
+- There were **no invalid unit price**.
 - The **last order date was 2013-12-31**.
 - Customers are segmented into different categories like Loyal, Active, Churned, etc. to helps in targeted marketing strategies and better customer relationship management
 - The insight suggests that while loyal customers generate the highest revenue, there are significant numbers of churned customers and potential churners that may require retention strategies.
