@@ -138,7 +138,7 @@ GROUP BY CUSTOMER_SEGMENT;
 - Customers are segmented into different categories like Loyal, Active, Churned, etc.
 - This segmentation helps in targeted marketing strategies and better customer relationship management.
 
-![Customer Segments](customer_segments.png)
+![Customer Segments](customer_segments.PNG)
 
 ## Technologies Used
 - **Database**: MySQL
