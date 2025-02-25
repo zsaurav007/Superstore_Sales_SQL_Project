@@ -64,9 +64,25 @@ SELECT MONTHNAME(MAX(ORDERDATE)) AS LAST_ORDER_MONTH, MAX(ORDERDATE) AS LAST_ORD
 ```sql
 SELECT CUSTOMERID, COUNT(*) FROM SUPERSTORE_SALES GROUP BY CUSTOMERID ORDER BY 2 DESC;
 ```
+### 10. Checking for Invalid Order Quantity
+```sql
+SELECT
+	ROWID, QUANTITYORDERED
+FROM SUPERSTORE_SALES
+ORDER BY QUANTITYORDERED
+LIMIT 10;
+```
+### 11. Checking for Invalid Unit Price
+```sql
+SELECT
+	ROWID, UNITPRICE
+FROM SUPERSTORE_SALES
+ORDER BY UNITPRICE
+LIMIT 10;
+```
 
 ## RFM Segmentation
-### 10. Creating RFM Scores
+### 12. Creating RFM Scores
 ```sql
 CREATE OR REPLACE VIEW RFM_SCORE_DATA AS
 WITH CUSTOMER_AGGREGATED_DATA AS
@@ -79,7 +95,7 @@ FROM SUPERSTORE_SALES
 GROUP BY CUSTOMERNAME),
 
 RFM_SCORE AS
-(SELECT 
+(SELECT
     C.*,
     NTILE(4) OVER (ORDER BY RECENCY_VALUE DESC) AS R_SCORE,
     NTILE(4) OVER (ORDER BY FREQUENCY_VALUE ASC) AS F_SCORE,
@@ -98,17 +114,17 @@ SELECT
     CONCAT_WS('', R_SCORE, F_SCORE, M_SCORE) AS RFM_SCORE_COMBINATION
 FROM RFM_SCORE AS R;
 ```
-### 11. Analyzing RFM Score Combinations
+### 13. Analyzing RFM Score Combinations
 ```sql
 SELECT * FROM RFM_SCORE_DATA WHERE RFM_SCORE_COMBINATION = '111';
 SELECT * FROM RFM_SCORE_DATA WHERE RFM_SCORE_COMBINATION = '222';
 SELECT * FROM RFM_SCORE_DATA WHERE RFM_SCORE_COMBINATION = '333';
 SELECT * FROM RFM_SCORE_DATA WHERE RFM_SCORE_COMBINATION = '444';
 ```
-### 12. Creating Customer Segments
+### 14. Creating Customer Segments
 ```sql
 CREATE OR REPLACE VIEW RFM_ANALYSIS AS
-SELECT 
+SELECT
     RFM_SCORE_DATA.*,
     CASE
         WHEN RFM_SCORE_COMBINATION IN (111, 112, 121, 132, 211, 211, 212, 114, 141) THEN 'CHURNED CUSTOMER'
@@ -121,7 +137,7 @@ SELECT
     END AS CUSTOMER_SEGMENT
 FROM RFM_SCORE_DATA;
 ```
-### 13. Segment-wise Customer Analysis
+### 15. Segment-wise Customer Analysis
 ```sql
 SELECT
     CUSTOMER_SEGMENT,
@@ -136,7 +152,7 @@ GROUP BY CUSTOMER_SEGMENT;
 - There were **no duplicate rows**.
 - The **last order date was 2013-12-31**.
 - Customers are segmented into different categories like Loyal, Active, Churned, etc. to helps in targeted marketing strategies and better customer relationship management
-- The insight suggests that  while loyal customers generate the highest revenue, there are significant numbers of churned customers and potential churners that may require retention strategies.
+- The insight suggests that while loyal customers generate the highest revenue, there are significant numbers of churned customers and potential churners that may require retention strategies.
 
 ![Customer Segments](customer_segments.PNG)
 
