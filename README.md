@@ -79,11 +79,6 @@ SELECT ROWID, COUNT(*) AS ROW_COUNT FROM superstore.SUPERSTORE_SALES GROUP BY RO
 | 23086 | 1     |
 | 23087 | 1     |
 | 23088 | 1     |
-| 23597 | 1     |
-| 25549 | 1     |
-| 20228 | 1     |
-| 19483 | 1     |
-| 24782 | 1     |
 
 ### 10. Checking for Invalid Order Quantity
 ```sql
@@ -96,11 +91,6 @@ SELECT ROWID, QUANTITYORDERED FROM SUPERSTORE_SALES ORDER BY QUANTITYORDERED LIM
 | 20631  | 1     |
 | 24987  | 1     |
 | 21254  | 1     |
-| 7711   | 1     |
-| 24074  | 1     |
-| 25083  | 1     |
-| 25711  | 1     |
-| 20632  | 1     |
 
 ### 11. Checking for Invalid Unit Price
 ```sql
@@ -113,11 +103,6 @@ SELECT ROWID, ROUND(UNITPRICE, 2) AS UNITPRICE FROM SUPERSTORE_SALES ORDER BY UN
 | 20321  | 1.14      |
 | 22380  | 1.14      |
 | 20356  | 1.14      |
-| 19980  | 1.14      |
-| 5421   | 1.14      |
-| 25717  | 1.14      |
-| 23421  | 1.14      |
-| 24839  | 1.14      |
 
 ## RFM Segmentation
 ### 12. Creating RFM Scores
