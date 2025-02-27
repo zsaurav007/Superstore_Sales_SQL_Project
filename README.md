@@ -149,7 +149,7 @@ GROUP BY CUSTOMER_SEGMENT;
 
 ## Customer Segments
 
-| Category                          | Count 1 | Count 2 |
+| Category                          | NUMBER_OF_CUSTOMERS | AVERAGE_MONETARY_VALUE |
 |-----------------------------------|---------|---------|
 | CHURNED CUSTOMER                 | 622     | 486     |
 | POTENTIAL CHURNERS               | 349     | 1067    |
