@@ -22,14 +22,6 @@ USE SUPERSTORE;
 ```sql
 SELECT * FROM SUPERSTORE_SALES LIMIT 10;
 ```
-
-## Users Table
-
-| id  | name  | email             | created_at          |
-|-----|-------|------------------|---------------------|
-| 1   | Alice | alice@example.com | 2024-02-28 12:34:56 |
-| 2   | Bob   | bob@example.com   | 2024-02-28 13:45:12 |
-
 ### 4. Renaming Columns for Convenience
 ```sql
 ALTER TABLE SUPERSTORE_SALES  
@@ -155,7 +147,18 @@ GROUP BY CUSTOMER_SEGMENT;
 - Customers are segmented into different categories like Loyal, Active, Churned, etc. to helps in targeted marketing strategies and better customer relationship management
 - The insight suggests that while **loyal customers generate the highest revenue**, there are **significant numbers of churned customers and potential churners** that may require retention strategies.
 
-![Customer Segments](customer_segments.PNG)
+## Customer Segments
+
+| Category                          | Count 1 | Count 2 |
+|-----------------------------------|---------|---------|
+| CHURNED CUSTOMER                 | 622     | 486     |
+| POTENTIAL CHURNERS               | 349     | 1067    |
+| Other                             | 565     | 3231    |
+| ACTIVE                            | 366     | 952     |
+| NEW CUSTOMERS                     | 17      | 185     |
+| LOYAL                             | 434     | 8502    |
+| SLIPPING AWAY, CANNOT LOSE        | 349     | 6907    |
+
 
 ## Technologies Used
 - **Database**: MySQL
