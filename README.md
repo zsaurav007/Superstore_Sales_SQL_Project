@@ -59,6 +59,13 @@ SET OrderDate = DATE_ADD('1899-12-30', INTERVAL OrderDate DAY);
 UPDATE SUPERSTORE_SALES
 SET ShipDate = DATE_ADD('1899-12-30', INTERVAL ShipDate DAY);
 ```
+| ORDERDATE      | SHIPDATE      |
+|------------|------------|
+| 2012-05-28 | 1905-07-04 |
+| 2010-07-07 | 1905-07-02 |
+| 2011-07-27 | 1905-07-03 |
+| 2011-07-27 | 1905-07-03 |
+| 2011-07-27 | 1905-07-03 |
 
 ## Exploratory Data Analysis (EDA)
 ### 7. Checking Total Rows
