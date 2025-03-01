@@ -34,21 +34,30 @@ CHANGE COLUMN `Order Date` OrderDate TEXT,
 CHANGE COLUMN `Ship Date` ShipDate TEXT,
 CHANGE COLUMN `Order ID` OrderID TEXT;
 ```
-### 5. Converting Excel Date Format
+### 5. Checking the date format.
+```sql
+SELECT 
+	ORDERDATE, SHIPDATE 
+FROM SUPERSTORE_SALES
+LIMIT 5;
+```
+| ORDERDATE | SHIPDATE |
+|---------|---------|
+| 41057  | 41059  |
+| 40366  | 40367  |
+| 40751  | 40752  |
+| 40751  | 40752  |
+| 40751  | 40751  |
+
+The dates are in **Excel Date Format**
+
+### 6. Converting Excel Date Format
 ```sql
 UPDATE SUPERSTORE_SALES
 SET OrderDate = DATE_ADD('1899-12-30', INTERVAL OrderDate DAY);
 
 UPDATE SUPERSTORE_SALES
 SET ShipDate = DATE_ADD('1899-12-30', INTERVAL ShipDate DAY);
-```
-### 6. Formatting Dates
-```sql
-UPDATE SUPERSTORE_SALES
-SET ORDERDATE = STR_TO_DATE(ORDERDATE, '%d/%m/%y');
-
-UPDATE SUPERSTORE_SALES
-SET SHIPDATE = STR_TO_DATE(SHIPDATE, '%d/%m/%y');
 ```
 
 ## Exploratory Data Analysis (EDA)
